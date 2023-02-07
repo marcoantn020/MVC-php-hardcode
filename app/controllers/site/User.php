@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers;
+namespace app\controllers\site;
 
 
 use app\interfaces\ControllerInterface;
@@ -10,6 +10,7 @@ class User implements ControllerInterface
 {
     public array $data = [];
     public string $view;
+    public $master = 'index.php';
 
     public function show(array $args)
     {

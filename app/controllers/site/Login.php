@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers;
+namespace app\controllers\site;
 
 use app\classes\BlockNotLogged;
 use app\classes\Flash;
@@ -11,6 +11,7 @@ class Login implements ControllerInterface
 {
     public array $data = [];
     public string $view;
+    public $master = 'index.php';
 
     public function __construct()
     {

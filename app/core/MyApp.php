@@ -32,11 +32,15 @@ class MyApp
                 throw new \RuntimeException("A propriedade [data] é obrigatoria");
             }
 
+            if(!isset($this->controller->master)) {
+                throw new \RuntimeException("A propriedade [master] é obrigatoria");
+            }
+
             if(!array_key_exists('title', $this->controller->data)) {
                 throw new \RuntimeException("A propriedade [title] é obrigatoria em data.");
             }
 
-            require PATH_VIEWS . "index.php";
+            require PATH_VIEWS . $this->controller->master;
         }
     }
 }

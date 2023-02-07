@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers;
+namespace app\controllers\site;
 
 use app\classes\Validate;
 use app\interfaces\ControllerInterface;
@@ -10,6 +10,7 @@ class Signup implements ControllerInterface
 {
     public array $data = [];
     public string $view;
+    public $master = 'index.php';
 
     public function index(array $args)
     {

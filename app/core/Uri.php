@@ -10,4 +10,11 @@ class Uri
 
         return explode("/", $uri);
     }
+
+    public static function uriExist($uri, $index)
+    {
+        if(isset($uri[$index]) and $uri[$index] !== '') {
+            return $uri[$index];
+        }
+    }
 }

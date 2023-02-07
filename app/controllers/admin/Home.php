@@ -1,30 +1,26 @@
 <?php
 
-namespace app\controllers;
+namespace app\controllers\admin;
 
 use app\interfaces\ControllerInterface;
-use app\models\activerecord\Find;
-use app\models\User;
 
 class Home implements ControllerInterface
 {
-    public array $data = [];
-    public string $view;
+    public $data = [];
+    public $view;
+    public $master = 'admin/index.php';
 
     public function index(array $args)
     {
-        $users = (new User())->execute(new Find());
-
-        $this->view = "home.php";
         $this->data = [
-            "title" => "Home",
-            "users" => $users
+            'title' => 'Admin'
         ];
+        $this->view = 'admin/home.php';
     }
 
     public function edit(array $args)
     {
-
+        // TODO: Implement edit() method.
     }
 
     public function show(array $args)

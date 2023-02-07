@@ -1,28 +1,31 @@
 <?php
 
-namespace app\controllers;
+namespace app\controllers\site;
 
 use app\interfaces\ControllerInterface;
+use app\models\activerecord\Find;
+use app\models\User;
 
-class Product implements ControllerInterface
+class Home implements ControllerInterface
 {
     public array $data = [];
     public string $view;
+    public $master = 'index.php';
 
     public function index(array $args)
     {
-        $this->view = 'edit.php';
+        $users = (new User())->execute(new Find());
+
+        $this->view = "home.php";
         $this->data = [
-            'title' => "Product"
+            "title" => "Home",
+            "users" => $users
         ];
     }
 
     public function edit(array $args)
     {
-        $this->view = 'edit.php';
-        $this->data = [
-            'title' => "Edit"
-        ];
+
     }
 
     public function show(array $args)
